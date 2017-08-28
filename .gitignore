@@ -1,0 +1,7 @@
+dist/bundle.js
+node_modules/
+coverage/
+.DS_Store
+dist/*bundle*
+*.bundle.js
+.npmignore
