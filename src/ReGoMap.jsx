@@ -1,31 +1,39 @@
 /* eslint-disable */
 
 import React, { Component } from "react";
-import loadJS from "../lib/script";
+import loadJS from "./lib/script";
 
-const mapStyle = {
+const defaultMapStyle = {
   width: "100%",
-  height: "500px",
+  height: "100%",
 };
+
+const defaultCoords = {
+  lat: -0.789275,
+  lng: 113.921327,
+};
+
 class ReGoMap extends Component {
   componentDidMount() {
     window.initMap = this.initMap;
     loadJS("https://maps.googleapis.com/maps/api/js?key=AIzaSyC_MS9uR5qeLcv9gS-gVbhe9Kck6zeGNQI&callback=initMap");
   }
   initMap = () => {
+    const { coords } = this.props;
     const options = {
-      zoom: 8,
-      center: { lat: 42.3601, lng: -71.0589 },
+      zoom: 5,
+      center: coords ? coords : defaultCoords,
     };
 
     // New map
     this.map = new google.maps.Map(this.map, options);
   };
   render() {
+    const { mapStyle } = this.props;
     return (
       <div>
         <div
-          style={mapStyle}
+          style={mapStyle ? mapStyle : defaultMapStyle}
           ref={input => {
             this.map = input;
           }}

@@ -1,6 +1,6 @@
 {
   "name": "regomap",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Wrapper Google Maps for React",
   "main": "index.js",
   "scripts": {

@@ -1,3 +1,3 @@
-import ReGoMap from "./src/components/ReGoMap";
+import ReGoMap from "./dist/bundle";
 
 export default ReGoMap;

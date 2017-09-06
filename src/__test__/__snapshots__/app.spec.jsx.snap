@@ -9,11 +9,25 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <div>
-    Halo there!
+    <div
+        style={
+            Object {
+                "height": "500px",
+                "width": "100%",
+              }
+        }
+    />
 </div>,
   "nodes": Array [
     <div>
-      Halo there!
+      <div
+            style={
+                  Object {
+                        "height": "500px",
+                        "width": "100%",
+                      }
+            }
+      />
 </div>,
   ],
   "options": Object {},
@@ -29,9 +43,10 @@ ShallowWrapper {
       "_instance": ReGoMap {
         "_reactInternalInstance": [Circular],
         "context": Object {},
+        "initMap": [Function],
         "props": Object {},
         "refs": Object {},
-        "state": Object {},
+        "state": null,
         "updater": Object {
           "enqueueCallback": [Function],
           "enqueueCallbackInternal": [Function],
@@ -51,11 +66,25 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div>
-          Halo there!
+          <div
+                    style={
+                              Object {
+                                        "height": "500px",
+                                        "width": "100%",
+                                      }
+                    }
+          />
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div>
-          Halo there!
+          <div
+                    style={
+                              Object {
+                                        "height": "500px",
+                                        "width": "100%",
+                                      }
+                    }
+          />
 </div>,
       },
       "_renderedNodeType": 0,

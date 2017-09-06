@@ -10,13 +10,14 @@ const config = {
     "react-hot-loader/patch",
     "webpack-dev-server/client?http://localhost:8080",
     "webpack/hot/only-dev-server",
-    "./src/App.jsx",
+    "./example/App.jsx",
   ],
   devtool: "cheap-eval-source-map", // untuk lebih gampang ngeliat code asli saat di devtool browser
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
     publicPath: "/dist/",
+    libraryTarget: "umd",
   },
   devServer: {
     hot: true, // for HMR
@@ -63,7 +64,7 @@ const config = {
 };
 
 if (process.env.NODE_ENV === "production") {
-  config.entry = "./src/App.jsx";
+  config.entry = "./src/ReGoMap.jsx";
   config.devtool = false;
   config.plugins = [];
 }
