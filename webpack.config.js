@@ -1,6 +1,8 @@
 const path = require("path");
 const webpack = require("webpack");
 
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 const config = {
   context: __dirname, // agar webpack dijalankan dari root directory, walau dipanggil dari child directory
   entry: [
@@ -8,28 +10,35 @@ const config = {
     "react-hot-loader/patch",
     "webpack-dev-server/client?http://localhost:8080",
     "webpack/hot/only-dev-server",
-    "./src/App.jsx"
+    "./src/App.jsx",
   ],
   devtool: "cheap-eval-source-map", // untuk lebih gampang ngeliat code asli saat di devtool browser
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/dist/"
+    publicPath: "/dist/",
   },
   devServer: {
     hot: true, // for HMR
     publicPath: "/dist/",
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   resolve: {
-    extensions: [".js", ".jsx", ".json"] // import file purpose
+    extensions: [".js", ".jsx", ".json"], // import file purpose
   },
   stats: {
     colors: true,
     reasons: true,
-    chunks: true
+    chunks: true,
   },
-  plugins: [new webpack.HotModuleReplacementPlugin(), new webpack.NamedModulesPlugin()], // untuk HMR
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new HtmlWebpackPlugin({
+      title: "Example",
+      filename: "./example/index.html",
+    }),
+  ], // untuk HMR
   module: {
     rules: [
       {
@@ -37,20 +46,20 @@ const config = {
         enforce: "pre",
         test: /\.jsx?$/,
         loader: "eslint-loader",
-        exclude: /node-modules/
+        exclude: /node-modules/,
       },
       {
         // loader for jsx
         test: /\.jsx?$/,
-        loader: "babel-loader"
+        loader: "babel-loader",
       },
       {
         // loader for css
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
-      }
-    ]
-  }
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
 };
 
 if (process.env.NODE_ENV === "production") {
