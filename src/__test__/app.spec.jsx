@@ -1,9 +1,9 @@
-// import React from "react";
-// import { shallow } from "enzyme";
+import React from "react";
+import { shallow } from "enzyme";
 
-// import ReGoMap from "../components/ReGoMap";
+import ReGoMap from "../components/ReGoMap";
 
-// test("Search render correctly", () => {
-//   const component = shallow(<ReGoMap />);
-//   expect(component).toMatchSnapshot();
-// });
+test("Search render correctly", () => {
+  const component = shallow(<ReGoMap />);
+  expect(component).toMatchSnapshot();
+});
