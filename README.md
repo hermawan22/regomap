@@ -11,7 +11,7 @@ npm install regomap
 ## Usage
 
 ```javascript
-import React from 'react;
+import React from 'react';
 import ReGoMap from 'regomap';
 
 const mapStyle = {
