@@ -8,7 +8,7 @@ const defaultMapStyle = {
   height: "100%",
 };
 
-const defaultCoords = {
+const defaultCenter = {
   lat: -0.789275,
   lng: 113.921327,
 };
@@ -19,10 +19,10 @@ class ReGoMap extends Component {
     loadJS("https://maps.googleapis.com/maps/api/js?key=AIzaSyC_MS9uR5qeLcv9gS-gVbhe9Kck6zeGNQI&callback=initMap");
   }
   initMap = () => {
-    const { coords } = this.props;
+    const { center, zoom } = this.props;
     const options = {
-      zoom: 5,
-      center: coords ? coords : defaultCoords,
+      zoom: zoom ? zoom : 5,
+      center: center ? center : defaultCenter,
     };
 
     // New map
